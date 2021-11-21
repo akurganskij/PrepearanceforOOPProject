@@ -54,6 +54,9 @@ namespace WinFormsApp20
             Random rnd = new Random();
             br.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
             this.Refresh();
+            Class1 f = new Class1(3);
+            this.Text = f.ToSquare().ToString();
+            
         }
     }
 }
