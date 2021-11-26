@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace WinFormsApp20
 {
+    
     public partial class Form1 : Form
     {
+        int t = 10;
         Rectangle rect = new Rectangle(300, 100, 200, 300);
         SolidBrush br = new SolidBrush(Color.Red);
         double angle = 0;
@@ -34,9 +36,9 @@ namespace WinFormsApp20
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            angle += 1;
-            this.Text = angle.ToString();
-            this.Refresh();
+            pictureBox1.Left += t;
+            if (pictureBox1.Left >= 1800 || pictureBox1.Left <= 18)
+                t *= -1;
         }
 
         private void Form1_Paint1(object sender, PaintEventArgs e)
@@ -46,16 +48,12 @@ namespace WinFormsApp20
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            br.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-            this.Refresh();
-            Class1 f = new Class1(3);
-            this.Text = f.ToSquare().ToString();
+            
             
         }
     }

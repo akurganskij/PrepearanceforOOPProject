@@ -14,7 +14,7 @@ namespace WinFormsApp20
         //Return square of a
         public int ToSquare()
         {
-            
+            return 1;
         }
     }
 }
